@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0;net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.IO.Ports" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
+		<PackageReference Include="System.Management" Version="5.0.0" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="lib/libUsbEventWatcher.Mac-x64.dylib">
+			<Pack>true</Pack>
+			<PackagePath>runtimes/osx-x64/native</PackagePath>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>libUsbEventWatcher.Mac-x64.dylib</TargetPath>
+		</None>
+		<None Include="lib/libUsbEventWatcher.MacCatalyst-x64.dylib">
+			<Pack>true</Pack>
+			<PackagePath>runtimes/maccatalyst-x64/native</PackagePath>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>libUsbEventWatcher.MacCatalyst-x64.dylib</TargetPath>
+		</None>
+		<None Include="lib/libUsbEventWatcher.Mac-arm64.dylib">
+			<Pack>true</Pack>
+			<PackagePath>runtimes/osx-arm64/native</PackagePath>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>libUsbEventWatcher.Mac-arm64.dylib</TargetPath>
+		</None>
+		<None Include="lib/libUsbEventWatcher.MacCatalyst-arm64.dylib">
+			<Pack>true</Pack>
+			<PackagePath>runtimes/maccatalyst-arm64/native</PackagePath>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<TargetPath>libUsbEventWatcher.MacCatalyst-arm64.dylib</TargetPath>
+		</None>
+	</ItemGroup>
+
+</Project>
